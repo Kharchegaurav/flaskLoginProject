@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account</title>
+<!-- css -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<!-- fireBasse  -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+
+<!-- config -->
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyDf01kIREXdWSCQg_MBP2CGTef8teeHUUc",
+            authDomain: "auth-33c59.firebaseapp.com",
+            projectId: "auth-33c59",
+            storageBucket: "auth-33c59.firebasestorage.app",
+            messagingSenderId: "434325978250",
+            appId: "1:434325978250:web:fcda0784875b1d72ce8173",
+            measurementId: "G-QQ7J05RCKJ"
+        };
+        firebase.initializeApp(firebaseConfig);
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="form-box">
+            <h2>Create Account</h2>
+            <form id="registerForm">
+                <div class="input-group">
+                    <input type="email" id="email" placeholder="Email" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="password" placeholder="Password" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+                </div>
+                <button type="submit" class="btn">Sign Up</button>
+                <p>Already have an account? <a href="{{ url_for('hello_world') }}">Login</a></p>
+            </form>
+            <p id="message"></p>
+        </div>
+    </div>
+
+<!-- js -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
